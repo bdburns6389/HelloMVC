@@ -31,6 +31,11 @@ namespace HelloMVC.Controllers
         }
 
         // Handle requests to /Hello/NAME (URL Segment)
+        [Route("/Hello/{name}")]
+        public IActionResult Index2(string name)
+        {
+            return Content(string.Format("<h1>Hello {0}</h1>", name), "text/html");
+        }
 
         // /Hello/Goodbye
         // Alter the route to this controller to be:  /Hello/Aloha
